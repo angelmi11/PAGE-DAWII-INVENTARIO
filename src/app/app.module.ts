@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,6 +14,8 @@ import { CategoryComponent } from './pages/category/category.component';
 import { ProductComponent } from './pages/product/product.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { PurchaseOrderComponent } from './pages/purchase-order/purchase-order.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +26,14 @@ import { PurchaseOrderComponent } from './pages/purchase-order/purchase-order.co
     CategoryComponent,
     ProductComponent,
     InventoryComponent,
-    PurchaseOrderComponent
+    PurchaseOrderComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]

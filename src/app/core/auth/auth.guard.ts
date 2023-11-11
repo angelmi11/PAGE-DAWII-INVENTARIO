@@ -11,6 +11,7 @@ export class AuthGuard {
     private authService: AuthService,
     private router: Router) { }
   canActivate(): boolean {
+    console.log("app2")
     if (this.authService.isAuthenticated()) {
       return true;
     } else {
