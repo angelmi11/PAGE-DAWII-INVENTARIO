@@ -1,8 +1,13 @@
-<div *ngIf="auth">
-  <router-outlet></router-outlet>
-</div>
-<div #else class="container-fluid vh-100 d-flex justify-content-center align-items-center containerGeneral">
-  <div class="container-form">
+<ng-container *ngIf="auth; else elseBlock">
+  <div>
     <router-outlet></router-outlet>
   </div>
-</div>
+</ng-container>
+
+<ng-template #elseBlock>
+  <div class="container-fluid vh-100 d-flex justify-content-center align-items-center containerGeneral">
+    <div class="container-form">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</ng-template>
