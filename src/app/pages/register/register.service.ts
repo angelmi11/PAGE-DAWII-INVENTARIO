@@ -14,6 +14,7 @@ export class RegisterService {
   ) { }
 
   async postRegisterUser(formRegister: any) {
+    console.log('formRegister', formRegister)
 
     let resp: any = await this.http.post(this.authUrl, formRegister).toPromise()
     console.log('resp', resp)

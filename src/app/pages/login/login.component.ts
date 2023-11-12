@@ -9,24 +9,21 @@ import { AuthService } from 'src/app/core/auth/auth.service';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent {
-  public loginForm: FormGroup;
+  public loginForm: FormGroup = this.fb.group({
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  },);
   constructor(
-    private fb: FormBuilder,
+    private fb: FormBuilder = new FormBuilder(),
     private authService: AuthService,
-    
-  ) {
-    this.loginForm = this.fb.group({
-      email: [undefined, [Validators.required, Validators.email]],
-      password: [undefined, [Validators.required]],
-    });
 
-  }
+  ) { }
 
   public onSubmit() {
-    const email = this.loginForm.get("email")?.value;
+    const username = this.loginForm.get("username")?.value;
     const password = this.loginForm.get("password")?.value;
-    if (email && password) {
-      this.authService.login(email, password);
+    if (username && password) {
+      this.authService.login(username, password);
     } else {
     }
   }

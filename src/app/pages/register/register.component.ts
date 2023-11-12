@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { RegisterService } from './register.service';
 
 @Component({
@@ -7,26 +7,41 @@ import { RegisterService } from './register.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.less']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  public registerForm: FormGroup;
+  public submitted = false;
+
+  public registrationForm: FormGroup = this.fb.group({
+    username: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(4)]],
+/*     confirmPassword: ['', [Validators.required]],
+ */  });
 
   constructor(
     private fb: FormBuilder,
     private registerService: RegisterService
   ) {
-    this.registerForm = this.fb.group({
-      username: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-    });
+
   }
 
-  ngOnInit() { }
+
+  /*  matchPassword(control: AbstractControl): { [key: string]: boolean } | null {
+     console.log('matchPassword function called');
+     const password = control.get('password');
+     const confirmPassword = control.get('confirmPassword');
+     console.log('password:', password);
+     console.log('confirmPassword:', confirmPassword);
+   
+     if (!password || !confirmPassword) {
+       return null;
+     }
+   
+     return password.value === confirmPassword.value ? null : { mismatch: true };
+   } */
 
   onSubmit() {
-    if (this.registerForm.invalid) return
-    this.registerService.postRegisterUser({ ...this?.registerForm?.value, status: "activo" })
+    if (this.registrationForm.invalid) return
+    this.registerService.postRegisterUser({ ...this?.registrationForm?.value, status: "activo" })
   }
-
 }

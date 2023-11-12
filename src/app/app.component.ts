@@ -13,5 +13,6 @@ export class AppComponent {
     private authService: AuthService
   ) {
     this.auth = this.authService.isAuthenticated()
+    console.log('this.auth', this.auth)
   }
 }
