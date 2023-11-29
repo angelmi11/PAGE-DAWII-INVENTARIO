@@ -1,26 +1,30 @@
-<div class="contianer-login">
-  <div class="mb-4 text-light ">
-    <h1 class="title-wellcome">¡BIENVENIDOS A LA VETERINARIA LOMITOS Y FARMACIA!</h1>
-  </div>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
-    <mat-form-field appearance="fill">
-      <mat-label>Usuario</mat-label>
-      <input matInput formControlName="username" />
-      <mat-error *ngIf="loginForm?.get?.('username')?.hasError('required')">Dato requerido</mat-error>
-    </mat-form-field>
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center containerGeneral">
+  <div class="container-form">
+    <div class="contianer-login">
+      <div class="mb-4 text-light ">
+        <h1 class="title-wellcome">¡BIENVENIDOS A LA VETERINARIA LOMITOS Y FARMACIA!</h1>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="username" />
+          <mat-error *ngIf="loginForm?.get?.('username')?.hasError('required')">Dato requerido</mat-error>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill" class="mt-4">
-      <mat-label>Contraseña</mat-label>
-      <input matInput type="password" formControlName="password" />
-      <mat-error *ngIf="loginForm?.get?.('password')?.hasError('required')">Dato requerido</mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="fill" class="mt-4">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-error *ngIf="loginForm?.get?.('password')?.hasError('required')">Dato requerido</mat-error>
+        </mat-form-field>
 
-    <button type="submit" class="mt-4" mat-raised-button color="primary">Iniciar sessión</button>
-    
-    <div class="mt-4 text-light ">
-      <mat-label> ¿Aún no tienes una cuenta? <a href="/registrar"
-          class="px-4 text-warning">Registrate</a></mat-label>
+        <button type="submit" class="mt-4" mat-raised-button color="primary">Iniciar sessión</button>
+
+        <div class="mt-4 text-light ">
+          <mat-label> ¿Aún no tienes una cuenta? <a href="/registrar"
+              class="px-4 text-warning">Registrate</a></mat-label>
+        </div>
+      </form>
+
     </div>
-  </form>
-
+  </div>
 </div>

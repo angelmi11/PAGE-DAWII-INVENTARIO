@@ -1,0 +1,11 @@
+<div>
+  <div class="title mt-4 mb-4">{{navigate.title}}</div>
+  <div class="container-url">
+    <ng-container *ngFor="let path of navigate.paths; let last = last">
+      <div class="text-link">
+        <a [class.active]="path.isSelect" [routerLink]="[path.link]"> {{ path.name }}</a>
+      </div>
+      <div class="text-link" *ngIf="!last">/</div>
+    </ng-container>
+  </div>
+</div>

@@ -27,7 +27,7 @@ export class SessionService {
   }
 
   public clear() {
-
+    localStorage.setItem(this.STORAGE_KEY, "");
   }
 
 }

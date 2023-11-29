@@ -1,0 +1,56 @@
+<div class="contianer-product ">
+  <div class="container">
+
+    <app-navigate [navigate]="navigate"></app-navigate>
+
+    <div class="row row-cols-12 container-form-product mt-4">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+        <div class="row row-cols-12 align-items-center d-flex ">
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="mt-4">
+              <mat-label>Nombre</mat-label>
+              <input matInput type="text" formControlName="name" />
+              <mat-error *ngIf="productForm?.get?.('name')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="mt-4">
+              <mat-label>Precio</mat-label>
+              <input matInput type="text" formControlName="price" />
+              <mat-error *ngIf="productForm?.get?.('price')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field>
+              <mat-label>Categoria</mat-label>
+              <mat-select formControlName="category_id">
+                <mat-option *ngFor="let category of categories" [value]="category.id">
+                  {{category.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="productForm?.get?.('category_id')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+
+          </div>
+        </div>
+        <div class="row row-cols-8 mt-4">
+          <mat-form-field appearance="fill" class="text-area">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput formControlName="description" placeholder="Ex. It makes me feel..."></textarea>
+            <mat-error *ngIf="productForm?.get?.('description')?.hasError('required')">Dato requerido</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="container container-btn">
+          <div class="row row-cols-4  d-flex justify-content-end gap-3">
+            <button mat-raised-button color="primary">Cancelar</button>
+            <button mat-raised-button color="primary">Guardar</button>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+</div>

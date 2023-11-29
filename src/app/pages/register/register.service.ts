@@ -7,8 +7,6 @@ import { SessionService } from 'src/app/core/services/session.service';
   providedIn: 'root'
 })
 export class RegisterService {
-  private authUrl = 'http://localhost:8080/auth/register';
-
   constructor(
     private http: HttpClient,
   ) { }
@@ -16,7 +14,7 @@ export class RegisterService {
   async postRegisterUser(formRegister: any) {
     console.log('formRegister', formRegister)
 
-    let resp: any = await this.http.post(this.authUrl, formRegister).toPromise()
+    let resp: any = await this.http.post("/auth/register", formRegister).toPromise()
     console.log('resp', resp)
     if (resp && resp?.token) {
       console.log("se registro")

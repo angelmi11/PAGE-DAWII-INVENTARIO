@@ -1,36 +1,41 @@
-<div class="contianer-register">
-  <div class="mb-2 text-light ">
-    <h1 class="title-register">¡CREATE UNA CUENTA EN LOMITOS Y FARMACIA!</h1>
-  </div>
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
-    <mat-form-field appearance="fill"  class="mt-2">
-      <mat-label>Usuario</mat-label>
-      <input matInput formControlName="username" />
-      <mat-error *ngIf="registrationForm?.get?.('username')?.hasError('required')">Dato requerido</mat-error>
-    </mat-form-field>
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center containerGeneral">
+  <div class="container-form">
+    <div class="contianer-register">
+      <div class="mb-2 text-light ">
+        <h1 class="title-register">¡CREATE UNA CUENTA EN LOMITOS Y FARMACIA!</h1>
+      </div>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+        <mat-form-field appearance="fill" class="mt-2">
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="username" />
+          <mat-error *ngIf="registrationForm?.get?.('username')?.hasError('required')">Dato requerido</mat-error>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill"  class="mt-4">
-      <mat-label>Correo</mat-label>
-      <input matInput formControlName="email" />
-      <mat-error *ngIf="registrationForm?.get?.('email')?.hasError('required')">Dato requerido</mat-error>
-      <mat-error *ngIf="registrationForm?.get?.('email')?.hasError('email')">Correo de formato incorrecto</mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="fill" class="mt-4">
+          <mat-label>Correo</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="registrationForm?.get?.('email')?.hasError('required')">Dato requerido</mat-error>
+          <mat-error *ngIf="registrationForm?.get?.('email')?.hasError('email')">Correo de formato
+            incorrecto</mat-error>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill"  class="mt-4">
-      <mat-label>Contraseña</mat-label>
-      <input matInput type="password" formControlName="password" />
-      <mat-error *ngIf="registrationForm?.get?.('password')?.hasError('required')">Dato requerido</mat-error>
-      <mat-error *ngIf="registrationForm?.get?.('password')?.hasError('minlength')">La contraseña debe tener min 4
-        caracteres
-        characters</mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="fill" class="mt-4">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-error *ngIf="registrationForm?.get?.('password')?.hasError('required')">Dato requerido</mat-error>
+          <mat-error *ngIf="registrationForm?.get?.('password')?.hasError('minlength')">La contraseña debe tener min 4
+            caracteres
+            characters</mat-error>
+        </mat-form-field>
 
 
-    <button type="submit" class="mt-4" mat-raised-button color="primary">Crear cuenta</button>
-    <div class="mt-4 text-light ">
-      <mat-label> ¿Ya tienes una cuenta? <a href="/login" class="px-4 text-warning">
-          Inicia sesión aquí</a></mat-label>
+        <button type="submit" class="mt-4" mat-raised-button color="primary">Crear cuenta</button>
+        <div class="mt-4 text-light ">
+          <mat-label> ¿Ya tienes una cuenta? <a href="/login" class="px-4 text-warning">
+              Inicia sesión aquí</a></mat-label>
 
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </div>

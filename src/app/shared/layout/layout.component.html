@@ -1,0 +1,78 @@
+<main class="main-box">
+  <aside class="sidebar">
+    <div class="container-logo">
+      <div class="logo-type">
+        <img width="150px" height="150px" src="../../../../assets/imagen/patas.svg" />
+      </div>
+      <div class="title-logo">
+        Lomitos
+      </div>
+    </div>
+
+    <div class="line-conten">
+      <div class="line"></div>
+    </div>
+    <nav class="menu-box">
+      <div class="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li>
+            <a [routerLink]="['/sucursal/lista']">Sucursales</a>
+          </li>
+          <li>
+            <a [routerLink]="['/usuario/lista']">Usuarios</a>
+          </li>
+          <li>
+            <a [routerLink]="['/categoria/lista']">Categorias</a>
+          </li>
+          <li>
+            <a [routerLink]="['/producto/lista']">Productos</a>
+          </li>
+          <li>
+            <a [routerLink]="['/proveedor/lista']">Proveedores</a>
+          </li>
+          <li>
+            <a [routerLink]="['/orden-compra/lista']">Ordenes de compra</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="line-conten">
+      <div class="line"></div>
+    </div>
+    <div class="container-end">
+      <div class="logout" (click)="logOut()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-left"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+          <path fill-rule="evenodd"
+            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+        </svg> Salir
+      </div>
+
+    </div>
+  </aside>
+  <div class="main">
+    <div class="head-title">
+      <header class="header-main ">
+        <div class="menu">
+          <img src="https://raw.githubusercontent.com/emnatkins/cdn-codepen/main/gOQRaMY/menu.svg" id="menu" />
+        </div>
+        <div class="operation-info">
+          <a href="#" class="btn-operation"><img
+              src="https://raw.githubusercontent.com/emnatkins/cdn-codepen/main/gOQRaMY/bag.svg" /></a>
+          <a href="#" class="btn-operation"><img
+              src="https://raw.githubusercontent.com/emnatkins/cdn-codepen/main/gOQRaMY/notification.svg" /></a>
+          <img src="/assets/imagen/avatar.png" alt="profile" class="profile" />
+        </div>
+      </header>
+      <h1 class="title-page">Bienvenido</h1>
+    </div>
+
+    <div class="page-content">
+      <div class="box-content">
+        <ng-component></ng-component>
+      </div>
+    </div>
+  </div>
+</main>

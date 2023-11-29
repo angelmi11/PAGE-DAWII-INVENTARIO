@@ -1,0 +1,91 @@
+<div class="contianer-product ">
+  <div class="container ">
+    <app-navigate [navigate]="navigate"></app-navigate>
+
+    <div class="row row-cols-12 container-form-product mt-4">
+      <form [formGroup]="purchaseOrderForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+        <div class="row row-cols-12 align-items-center d-flex ">
+          <div class="col-6">
+            <mat-form-field>
+              <mat-label>Sucursal</mat-label>
+              <mat-select formControlName="branchId">
+                <mat-option *ngFor="let branch of branchOffices" [value]="branch.id">
+                  {{branch.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="purchaseOrderForm?.get?.('branchId')?.hasError('required')">Dato
+                requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field>
+              <mat-label>Proveedor</mat-label>
+              <mat-select formControlName="vendorId">
+                <mat-option *ngFor="let ven of vendor" [value]="ven.id">
+                  {{ven.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="purchaseOrderForm?.get?.('vendorId')?.hasError('required')">Dato
+                requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field>
+              <mat-label>Responzable</mat-label>
+              <mat-select formControlName="userId">
+                <mat-option *ngFor="let use of user" [value]="use.id">
+                  {{use.username}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="purchaseOrderForm?.get?.('userId')?.hasError('required')">Dato
+                requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field>
+              <mat-label>Responsable</mat-label>
+              <mat-select formControlName="productId">
+                <mat-option *ngFor="let product of products" [value]="product.id">
+                  {{product.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="purchaseOrderForm?.get?.('productId')?.hasError('required')">Dato
+                requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="mt-4">
+              <mat-label>Cantidad</mat-label>
+              <input matInput type="text" formControlName="quantity" />
+              <mat-error *ngIf="purchaseOrderForm?.get?.('quantity')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="mt-4">
+              <mat-label>Precio</mat-label>
+              <input matInput type="text" formControlName="price" />
+              <mat-error *ngIf="purchaseOrderForm?.get?.('price')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+          </div>
+       
+        </div>
+     
+        <div class="container container-btn">
+          <div class="row row-cols-4  d-flex justify-content-end gap-3">
+            <button mat-raised-button color="primary">Cancelar</button>
+            <button mat-raised-button color="primary">Guardar</button>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+</div>
