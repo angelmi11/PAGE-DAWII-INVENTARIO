@@ -15,8 +15,9 @@ export class VendorService {
     private router: Router
   ) { }
 
-  public async post(branchOffice: IVendor) {
-    let resp: any = await this.http.post(this.url, branchOffice).toPromise()
+  public async post(vendor: IVendor) {
+    console.log('vendor', vendor)
+    let resp: any = await this.http.post(this.url, vendor).toPromise()
   }
 
   public async id(id: number) {

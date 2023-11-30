@@ -39,10 +39,10 @@ export class VendorListComponent {
   }
 
   public viewEditBranchOffice(id: number) {
-    this.router.navigate(['/sucursal/editar', id]);
+    this.router.navigate(['/proveedor/editar', id]);
   }
 
   public createVendor() {
-    this.router.navigate(['/sucursal/crear']);
+    this.router.navigate(['/proveedor/crear']);
   }
 }
