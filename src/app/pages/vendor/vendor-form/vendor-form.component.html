@@ -1,0 +1,46 @@
+<div class="contianer-product ">
+  <div class="container ">
+    <app-navigate [navigate]="navigate"></app-navigate>
+    <div class="row  container-form-product mt-4">
+      <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+        <div class="row row-cols-12 align-items-center d-flex">
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="mt-4">
+              <mat-label>Nombre</mat-label>
+              <input matInput type="text" formControlName="name" />
+              <mat-error *ngIf="vendorForm?.get?.('name')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="mt-4">
+              <mat-label>Dirección</mat-label>
+              <input matInput type="text" formControlName="address" />
+              <mat-error *ngIf="vendorForm?.get?.('address')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="text-area">
+              <mat-label>Teléfono</mat-label>
+              <input matInput type="text" formControlName="phone" />
+              <mat-error *ngIf="vendorForm?.get?.('phone')?.hasError('required')">Dato requerido</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <div class="container container-btn">
+          <div class="row row-cols-4  d-flex justify-content-end gap-3">
+            <button mat-raised-button color="primary">Cancelar</button>
+            <button mat-raised-button color="primary">Guardar</button>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+</div>
